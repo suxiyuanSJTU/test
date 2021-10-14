@@ -1,0 +1,13 @@
+1. abb_irb1200_5_90_pro_moveit_config
+是使用moveit！生成的相关文件，用于配置机械臂
+
+2. abb_irb1200_planning
+是运动规划的主要文件夹，运动规划的相关脚本放在 scripts 中
+- action 相关的文件：abb_action_client.py，abb_action_server.py
+- socket 相关的文件：abb_socket_client.py，abb_socket_server.py
+- service 相关的文件：abb_srv_client.py，abb_srv_server.py
+- arduino 相关：abb_moveit_arduino.py
+- web 相关：abb_moveit_visual.py，abb_moveit_web.py
+
+- 运动规划 demo：abb_moveit_cartisen_demo.py，abb_moveit_fk_demo.py，abb_moveit_ik_demo.py【其中，fk表示机器人正向运动学，ik表示逆向运动学】
+- 实际路径规划：abb_path_xxx

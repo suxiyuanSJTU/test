@@ -1,0 +1,26 @@
+项目介绍：
+Ubuntu 18.04 + ros-melodic
+
+1、项目内容
+
+通过ros与相机通信、控制机械臂实现简单的识别与夹取功能，相机的通信已经完成，但ros给arduino发信号的模块遇到困难（头文件不存在的问题）
+对于ros与arduino的通信，是通过控制机械臂的路径规划的python文件中（simplyfy.py）调用向arduino发送信号的serial_test.cpp文件实现，给arduino发去"yes"或"no"的信号。根据网上查找到的资料，需要将serial_test.cpp文件编译成相应的.so文件，但编译出现问题，即上文提到的头文件不存在（如ros.h、serial.h、string.h等）
+
+希望能帮忙解决以上问题
+
+2、主要需要的内容
+需要使用的python文件在：/home/sxy/catkin_ws/src/cankaodaima/abb_irb1200_planning/scripts 路径下
+其中，只需要关注simplify.py（控制机械臂、调用c脚本与arduino通信，不是simplify2.py！）、serial_test.cpp（与arduino的串口通信）两个文件即可，可能需要用到其他东西，到时候麻烦联系我。
+python脚本中以用“——————————————加载cpp文件——————————————————”的格式对与arduino通信的内容进行标注，如需修改可随意翻阅。
+此外，在CSDN上还查到说需要修改CMakelist.txt之类的，我不太清楚，烦请也麻烦看一下，博客链接如下：
+https://blog.csdn.net/weixin_42464553/article/details/113580096?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-0.no_search_link&spm=1001.2101.3001.4242
+
+
+希望能解决simplify.py无法调用c脚本的问题，谢谢！如果需要将.c改成.cpp或者其他需求，也请自便，有关键更改烦请在txt说明文件中稍微解释一下，我也想知道到底是哪里的问题5555
+
+
+
+
+10.14上午修改：
+将serial_test.cpp文件移动到了 /home/sxy/catkin_ws/src/cankaodaima/abb_irb1200_planning/src 路径下，因为不知道cpp文件究竟该房子scripts里还是src里
+修改了CMakelist与package.xml文件
